@@ -1,4 +1,5 @@
 var React = require('react'),
+    ReactDOM = require('react-dom'),
     Minesweeper = require('../lib/minesweeper.js'),
     Board = require('./board.jsx');
 
@@ -18,8 +19,8 @@ var Game = React.createClass({
   }
 });
 
-// document.addEventListener('DOMContentLoaded', function(){
-//   ReactDOM.render(<Game/>, document.getElementById('root'));
-// });
+document.addEventListener('DOMContentLoaded', function(){
+  ReactDOM.render(<Game/>, document.getElementById('root'));
+});
 
 module.exports = Game;

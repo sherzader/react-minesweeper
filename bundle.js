@@ -19774,8 +19774,9 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1),
+	    ReactDOM = __webpack_require__(158),
 	    Minesweeper = __webpack_require__(159),
-	    Board = __webpack_require__(161);
+	    Board = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./board.jsx\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 
 	var Game = React.createClass({
 	  displayName: 'Game',
@@ -19793,17 +19794,11 @@
 	  }
 	});
 
-	// document.addEventListener('DOMContentLoaded', function(){
-	//   ReactDOM.render(<Game/>, document.getElementById('root'));
-	// });
+	document.addEventListener('DOMContentLoaded', function () {
+	  ReactDOM.render(React.createElement(Game, null), document.getElementById('root'));
+	});
 
 	module.exports = Game;
-
-/***/ },
-/* 161 */
-/***/ function(module, exports) {
-
-	
 
 /***/ }
 /******/ ]);
