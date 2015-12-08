@@ -1,7 +1,8 @@
 var React = require('react'),
     ReactDOM = require('react-dom'),
-    Minesweeper = require('../lib/minesweeper.js');
+    Minesweeper = require('../lib/minesweeper.js'),
+    Game = require('./react_minesweeper.jsx');
 
   document.addEventListener('DOMContentLoaded', function(){
-    ReactDOM.render('div', document.getElementById('root'));
+    ReactDOM.render(<Game/>, document.getElementById('root'));
   });

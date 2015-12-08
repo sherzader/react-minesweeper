@@ -46,10 +46,11 @@
 
 	var React = __webpack_require__(1),
 	    ReactDOM = __webpack_require__(158),
-	    Minesweeper = __webpack_require__(159);
+	    Minesweeper = __webpack_require__(159),
+	    Game = __webpack_require__(160);
 
 	document.addEventListener('DOMContentLoaded', function () {
-	  ReactDOM.render('div', document.getElementById('root'));
+	  ReactDOM.render(React.createElement(Game, null), document.getElementById('root'));
 	});
 
 /***/ },
@@ -19767,6 +19768,42 @@
 	  Board: Board,
 	  Tile: Tile
 	};
+
+/***/ },
+/* 160 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1),
+	    Minesweeper = __webpack_require__(159),
+	    Board = __webpack_require__(161);
+
+	var Game = React.createClass({
+	  displayName: 'Game',
+
+	  getInitialState: function () {
+	    return { board: new Minesweeper.Board(9, 9) };
+	  },
+	  updateGame: function () {},
+	  render: function () {
+	    return React.createElement(
+	      'div',
+	      null,
+	      React.createElement(Board, { board: this.state.board, update: this.updateGame })
+	    );
+	  }
+	});
+
+	// document.addEventListener('DOMContentLoaded', function(){
+	//   ReactDOM.render(<Game/>, document.getElementById('root'));
+	// });
+
+	module.exports = Game;
+
+/***/ },
+/* 161 */
+/***/ function(module, exports) {
+
+	
 
 /***/ }
 /******/ ]);
